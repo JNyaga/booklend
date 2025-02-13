@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "profile", to: "users#profile", as: "profile"
+
   root "books#index"
 
   get "up" => "rails/health#show", as: :rails_health_check
