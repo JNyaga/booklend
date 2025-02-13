@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_13_194924) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_13_204038) do
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.integer "first_publish_year"
+    t.string "isbn"
+    t.boolean "is_available"
+    t.string "image_url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["isbn"], name: "index_books_on_isbn", unique: true
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "ip_address"
