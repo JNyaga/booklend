@@ -1,0 +1,47 @@
+<li class="bg-white shadow-md rounded-md p-4 flex flex-col">
+    <!-- Book Cover Image Container -->
+    <div class="relative w-full h-48 overflow-hidden rounded-md bg-gray-100">
+        <% if book.image_url.present? %>
+        <!-- Image Tag with onerror Fallback -->
+        <%= image_tag book.image_url,
+            alt: book.title,
+            class: "w-full h-full object-cover",
+            onerror: "this.onerror=null;this.src='https://via.placeholder.com/200x300?text=No+Image';" %>
+        <% else %>
+        <!-- If image_url is blank, show a placeholder immediately -->
+        <img src="https://via.placeholder.com/200x300?text=No+Image" alt="No Image" class="w-full h-full object-cover">
+        <% end %>
+    </div>
+
+    <!-- Book Title / Due Date or Author -->
+    <div class="mt-4 flex-1">
+        <h3 class="text-xl font-semibold text-gray-800">
+            <%= link_to book.title, book_path(book), class: "hover:underline hover:text-blue-500 transition" %>
+        </h3>
+
+        <% if local_assigns[:due_date].present? %>
+        <p class="text-gray-500 mt-1">
+            Due: <%= due_date.strftime("%d %b %Y") %>
+        </p>
+        <% else %>
+        <p class="text-gray-500 mt-1">
+            by <%= book.author %>
+        </p>
+        <% end %>
+    </div>
+
+    <!-- Availability Badge or Return Button -->
+    <div class="mt-2">
+        <% if local_assigns[:show_return_button] %>
+        <!-- Borrowed scenario: "Return" button -->
+        <%= button_to "Return", return_book_path(book), method: :post,
+            class: "px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition" %>
+        <% else %>
+        <!-- Regular listing scenario: availability badge -->
+        <span class="inline-block px-3 py-1 rounded-full text-sm font-medium
+             <%= book.is_available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' %>">
+            <%= book.is_available ? "Available" : "Borrowed" %>
+        </span>
+        <% end %>
+    </div>
+</li>

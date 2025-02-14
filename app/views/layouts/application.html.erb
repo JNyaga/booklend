@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title><%= content_for(:title) || "Booklend" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,11 +21,14 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+</head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+<body>
+    <%= render "shared/header" %>
+    <%= render "shared/flash" %>
+    <main class="mt-8 px-5 flex">
+        <%= yield %>
     </main>
-  </body>
+</body>
+
 </html>
