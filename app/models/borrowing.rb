@@ -8,6 +8,6 @@ class Borrowing < ApplicationRecord
   private
 
   def book_availability
-    errors.add(:book, "is already borrowed") unless book.available?
+    errors.add(:book, "is already borrowed") unless book.is_available?
   end
 end
