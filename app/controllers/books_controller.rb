@@ -6,7 +6,14 @@ class BooksController < ApplicationController
 
 
   def index
-    @books = Book.all
+    if params[:query].present?
+      # Downcase the search term in Ruby
+      query = "%#{params[:query].downcase}%"
+      # Use LOWER() to compare in lowercase
+      @books = Book.where("LOWER(title) LIKE :query OR LOWER(author) LIKE :query OR LOWER(isbn) LIKE :query", query: query)
+    else
+      @books = Book.all
+    end
   end
 
   def show
