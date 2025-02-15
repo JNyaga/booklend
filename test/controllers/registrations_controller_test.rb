@@ -52,7 +52,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :unprocessable_entity
     # Check that the response includes an error message regarding password confirmation.
-    assert_match /password confirmation.*match/i, @response.body
+    assert_match(/password confirmation.*match/i, @response.body)
   end
 
   test "should redirect create if already logged in" do

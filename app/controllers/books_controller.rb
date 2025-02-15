@@ -43,7 +43,7 @@ class BooksController < ApplicationController
       @book.update(is_available: true)
       redirect_to profile_path, notice: "You have returned '#{@book.title}'."
     else
-      redirect_to @book, alert: "You have not borrowed this book."
+      redirect_to book_path(@book), alert: "You have not borrowed this book."  # Ensure flash message is set
     end
   end
 

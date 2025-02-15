@@ -33,7 +33,10 @@
                 <% if @book.is_available %>
                 <%= button_to "📖 Borrow this Book", borrow_book_path(@book), method: :post, class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition" %>
                 <% else %>
-                <%=  %>
+                <%# If the book is not available, only show the Return button if the current user has borrowed it %>
+                <% if Current.user.borrowed_books.exists?(@book.id) %>
+                <%= button_to "🔄 Return this Book", return_book_path(@book), method: :post, class: "bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition" %>
+                <% end %>
                 <% end %>
             </div>
             <% else %>
