@@ -36,10 +36,10 @@ class BooksShowViewTest < ActionDispatch::IntegrationTest
     @book.update!(is_available: true)
 
     # Simulate borrowing by the current user
-    post borrow_book_url(@book)
-
-    # Ensure the borrowing record exists
     users(:one).borrowings.create!(book: @book, borrowed_at: Time.now, due_date: 2.weeks.from_now)
+
+    # Mark the book as unavailable after being borrowed
+    @book.update!(is_available: false)
 
     # Visit the book's page
     get book_url(@book)
@@ -48,24 +48,22 @@ class BooksShowViewTest < ActionDispatch::IntegrationTest
     assert_select "form button", text: "🔄 Return this Book"
   end
 
-
   test "show does not display return button if another user borrowed the book" do
     sign_in users(:two) # Different user logs in
-  
+
     # Ensure the book is available before borrowing
     @book.update!(is_available: true)
-  
+
     # Simulate borrowing by another user (user one)
     users(:one).borrowings.create!(book: @book, borrowed_at: Time.now, due_date: 2.weeks.from_now)
-  
+
     # Mark the book as unavailable after being borrowed
     @book.update!(is_available: false)
-  
+
     # Visit the book's page as user two
     get book_url(@book)
-  
+
     # Ensure the return button is NOT displayed for user two
     assert_select "form button", text: "🔄 Return this Book", count: 0
   end
-  
 end
