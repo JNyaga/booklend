@@ -4,7 +4,7 @@
         Create your account to start accessing books.
     </p>
 
-    <%= form_with url: registrations_url, model: @user, method: :post, class: "contents" do |form| %>
+    <%= form_with url: registrations_url, model: @user, method: :post, local: true, class: "contents" do |form| %>
     <!-- Email -->
     <div class="my-5">
         <%= form.email_field :email_address,
