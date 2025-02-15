@@ -34,19 +34,24 @@ Ensure you have Ruby and Rails installed on your system. Follow the official gui
    bin/rails db:migrate
    bin/rails db:seed
    ```
-4. **Start the Server**
+4. **Build Tailwind CSS Assets in Rails**
+
+   ```sh
+   bin/rails tailwindcss:build
+   ```
+5. **Start the Server**
 
    ```sh
    bin/rails server
    ```
 
    The application will be available at: [http://localhost:3000](http://localhost:3000/)
-5. **Clear assets cache**
+6. **Clear assets cache**(for production)
 
    ```sh
    bin/rails assets:clobber
    ```
-6. **Precompile assets** (for production)
+7. **Precompile assets** (for production)
 
 ```sh
 bin/rails assets:precompile
