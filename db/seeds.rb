@@ -22,15 +22,6 @@ books = [
     description: "Classic reference on refactoring techniques for improving existing code bases."
   },
   {
-    title: "Code Complete: A Practical Handbook of Software Construction",
-    author: "Steve McConnell",
-    first_publish_year: 1993,
-    isbn: "978-0735619678",
-    is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/51MgH8JmrEL._SX408_BO1,204,203,200_.jpg",
-    description: "Comprehensive guide to software construction with practical checklists and best practices."
-  },
-  {
     title: "You Don't Know JS: Up & Going",
     author: "Kyle Simpson",
     first_publish_year: 2015,
@@ -40,12 +31,21 @@ books = [
     description: "First book in the YDKJS series introducing JavaScript programming fundamentals."
   },
   {
+    title: "Code Complete: A Practical Handbook of Software Construction",
+    author: "Steve McConnell",
+    first_publish_year: 1993,
+    isbn: "978-0735619678",
+    is_available: true,
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
+    description: "Comprehensive guide to software construction with practical checklists and best practices."
+  },
+  {
     title: "The Clean Coder: A Code of Conduct for Professional Programmers",
     author: "Robert C. Martin",
     first_publish_year: 2011,
     isbn: "978-0137081073",
     is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/51uO-K+V5DL._SX408_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Practical advice for professional software developers about attitudes and approaches."
   },
   {
@@ -54,7 +54,7 @@ books = [
     first_publish_year: 2001,
     isbn: "978-0134685991",
     is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/417zLTaVLUL._SX357_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Essential Java programming best practices with updated coverage through Java 9."
   },
   {
@@ -63,7 +63,7 @@ books = [
     first_publish_year: 1984,
     isbn: "978-0262510875",
     is_available: false,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/41nILMk2BRL._SX454_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Classic computer science text using Scheme to explain fundamental programming concepts."
   },
   {
@@ -90,7 +90,7 @@ books = [
     first_publish_year: 1975,
     isbn: "978-0201835953",
     is_available: false,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/41BW53ajbeL._SX331_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Seminal essays on software engineering and project management, still relevant today."
   },
   {
@@ -108,7 +108,7 @@ books = [
     first_publish_year: 1990,
     isbn: "978-0262033848",
     is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/41VQ9uSRB8L._SX442_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Comprehensive textbook covering a broad range of algorithms in depth."
   },
   {
@@ -117,7 +117,7 @@ books = [
     first_publish_year: 2004,
     isbn: "978-0131177055",
     is_available: false,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/51HwpN2SyeL._SX376_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Practical strategies for working with and improving existing codebases."
   },
   {
@@ -126,7 +126,7 @@ books = [
     first_publish_year: 2000,
     isbn: "978-0321344755",
     is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/41ETMZI0bPL._SX387_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Classic guide to web usability and intuitive interface design."
   },
   {
@@ -153,7 +153,7 @@ books = [
     first_publish_year: 2016,
     isbn: "978-1942788003",
     is_available: false,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/51E6toaN8jL._SX329_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Practical guide to implementing DevOps principles in organizations."
   },
   {
@@ -162,7 +162,7 @@ books = [
     first_publish_year: 2016,
     isbn: "978-1491929124",
     is_available: true,
-    image_url: "https://images-na.ssl-images-amazon.com/images/I/51k5LkQnXIL._SX379_BO1,204,203,200_.jpg",
+    image_url: "https://placehold.co/300x450?text=Book+Cover",
     description: "Insights into Google's approach to building and maintaining reliable systems."
   }
 ]
